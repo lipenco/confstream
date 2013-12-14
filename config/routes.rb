@@ -1,5 +1,10 @@
 Confstream::Application.routes.draw do
-  resources :screencasts
+  # resources :screencasts
+
+  scope :api do
+    get "/screencasts(.:format)" => "screencasts#index"
+    get "/screencasts/:id(.:format)" => "screencasts#show"
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
