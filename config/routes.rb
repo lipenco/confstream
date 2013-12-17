@@ -1,4 +1,7 @@
 Confstream::Application.routes.draw do
+  resources :conferences
+
+  devise_for :users
   # resources :screencasts
 
   scope :api do
